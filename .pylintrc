@@ -1,0 +1,13 @@
+[MASTER]
+ignore=.venv
+
+[FORMAT]
+max-line-length=88
+
+[MESSAGES CONTROL]
+disable=
+    too-few-public-methods,
+    duplicate-code
+
+[DESIGN]
+max-args=6
