@@ -1,0 +1,10 @@
+[
+  {"reservation_id": "r-001", "customer_id": "c-001", "hotel_id": "h-001"},
+  {"reservation_id": "r-002", "customer_id": "c-002", "hotel_id": "h-002"},
+
+  {"reservation_id": "bad-001", "customer_id": "c-001"},
+  {"reservation_id": "bad-002", "hotel_id": "h-001"},
+  {"reservation_id": "   ", "customer_id": "c-001", "hotel_id": "h-001"},
+  {"reservation_id": "bad-004", "customer_id": "   ", "hotel_id": "h-001"},
+  {"reservation_id": "bad-005", "customer_id": "c-001", "hotel_id": "   "}
+]
