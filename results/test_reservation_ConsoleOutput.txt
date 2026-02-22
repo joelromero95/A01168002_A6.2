@@ -1,0 +1,74 @@
+﻿python : test_cancel_reservation_not_found_raises 
+(tests.test_reservation.TestReservationRepository.test_cancel_reservation_not_found_raises)
+En línea: 2 Carácter: 1
++ python -m unittest tests.test_reservation -v 2>&1 |
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_cancel_res...t_found_raises):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Cancelar una reservaci�n inexistente debe lanzar NotFoundError. ... ok
+test_cancel_reservation_removes_and_frees_room 
+(tests.test_reservation.TestReservationRepository.test_cancel_reservation_removes_and_frees_room)
+Cancelar debe eliminar el registro y disminuir reserved_rooms del hotel. ... ok
+test_create_reservation_customer_not_found_raises 
+(tests.test_reservation.TestReservationRepository.test_create_reservation_customer_not_found_raises)
+Si customer no existe, debe lanzar NotFoundError. ... ok
+test_create_reservation_hotel_not_found_raises 
+(tests.test_reservation.TestReservationRepository.test_create_reservation_hotel_not_found_raises)
+Si hotel no existe, debe lanzar NotFoundError. ... ok
+test_create_reservation_no_rooms_raises 
+(tests.test_reservation.TestReservationRepository.test_create_reservation_no_rooms_raises)
+Si el hotel no tiene disponibilidad, debe lanzar ValidationError. ... ok
+test_create_reservation_persists_and_reserves_room 
+(tests.test_reservation.TestReservationRepository.test_create_reservation_persists_and_reserves_room)
+Crear reservaci�n debe persistir y aumentar reserved_rooms del hotel. ... ok
+test_display_reservation_not_found_raises 
+(tests.test_reservation.TestReservationRepository.test_display_reservation_not_found_raises)
+Si la reservaci�n no existe, debe lanzar NotFoundError. ... ok
+test_display_reservation_ok (tests.test_reservation.TestReservationRepository.test_display_reservation_ok)
+display_reservation debe mostrar customer_id y hotel_id. ... ok
+test_load_all_ignores_invalid_records_from_json 
+(tests.test_reservation.TestReservationRepository.test_load_all_ignores_invalid_records_from_json)
+Debe ignorar registros inv�lidos del archivo y cargar solo los v�lidos. ... ok
+test_load_all_with_non_list_json_is_safe 
+(tests.test_reservation.TestReservationRepository.test_load_all_with_non_list_json_is_safe)
+Si el JSON no es lista, debe manejarlo sin crash (regresa vac�o). ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.167s
+
+OK
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpi23zh3ga\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmprir91vlp\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmprir91vlp\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmprir91vlp\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpc2uk3k10\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpc2uk3k10\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpw8gfpf3l\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpw8gfpf3l\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmphnr52d9q\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmphnr52d9q\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmphnr52d9q\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpq80y084e\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpq80y084e\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpq80y084e\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpp32ckm_4\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp6w72u0cf\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp6w72u0cf\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp6w72u0cf\reservations.json. Se usar� lista vac�a.
+[ERROR] Reservation inv�lida (faltan ['hotel_id']). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['customer_id']). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['hotel_id']). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['customer_id']). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['hotel_id']). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['customer_id']). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] JSON inv�lido (no es lista) en C:\Users\joel_\AppData\Local\Temp\tmp4z8bgxhn\reservations.json. Se usar� [].
