@@ -51,7 +51,7 @@ def load_json_list(path: Path) -> List[Dict[str, Any]]:
     except (json.JSONDecodeError, OSError) as exc:
         _safe_print(f"[ERROR] No se pudo leer {path}: {exc}. Se usará [].")
         return []
-    
+
 
 def save_json_list(path: Path, data: List[Dict[str, Any]]) -> None:
     """Guarda una lista de diccionarios en JSON de forma segura."""
