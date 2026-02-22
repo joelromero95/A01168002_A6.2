@@ -1,0 +1,30 @@
+﻿python : test_load_json_list_empty_file_returns_empty 
+(tests.test_storage.TestStorage.test_load_json_list_empty_file_returns_empty)
+En línea: 2 Carácter: 1
++ python -m unittest tests.test_storage -v 2>&1 |
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_load_json_..._returns_empty):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Si el archivo est� vac�o, debe regresar [] y avisar en consola. ... ok
+test_load_json_list_file_not_exists_returns_empty 
+(tests.test_storage.TestStorage.test_load_json_list_file_not_exists_returns_empty)
+Si el archivo no existe, debe regresar [] y avisar en consola. ... ok
+test_load_json_list_filters_non_dict_items (tests.test_storage.TestStorage.test_load_json_list_filters_non_dict_items)
+Debe filtrar elementos que no sean dict e ignorarlos con aviso. ... ok
+test_load_json_list_invalid_json_returns_empty (tests.test_storage.TestStorage.test_load_json_list_invalid_json_returns_empty)
+Si el JSON est� corrupto, debe regresar [] y avisar en consola. ... ok
+test_load_json_list_json_not_list_returns_empty (tests.test_storage.TestStorage.test_load_json_list_json_not_list_returns_empty)
+Si el JSON v�lido no es una lista, debe regresar [] y avisar. ... ok
+test_load_json_list_whitespace_file_returns_empty 
+(tests.test_storage.TestStorage.test_load_json_list_whitespace_file_returns_empty)
+Si el archivo contiene solo espacios, debe regresar [] y avisar. ... ok
+test_save_json_list_creates_dir_and_writes_file (tests.test_storage.TestStorage.test_save_json_list_creates_dir_and_writes_file)
+Debe crear el directorio padre y guardar el archivo JSON. ... ok
+test_save_json_list_handles_write_error (tests.test_storage.TestStorage.test_save_json_list_handles_write_error)
+Si ocurre un error de escritura, debe avisar y no crashear. ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.054s
+
+OK
