@@ -28,3 +28,13 @@ class Hotel:
     def available_rooms(self) -> int:
         """Cuartos disponibles en el hotel."""
         return max(0, self.total_rooms - self.reserved_rooms)
+
+
+class HotelRepository:
+    """Repositorio de Hotels persistido en JSON."""
+
+    def __init__(self, data_path: Path) -> None:
+        self._path = data_path
+
+
+
