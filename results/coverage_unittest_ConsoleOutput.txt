@@ -1,0 +1,119 @@
+﻿coverage : ..................................................
+En línea: 3 Carácter: 3
++   coverage run -m unittest discover -s tests
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (.................................:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+----------------------------------------------------------------------
+Ran 50 tests in 0.428s
+
+OK
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpieiu_uij\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpx7fxgzyq\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpmd7jb_e1\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpnx2of8yf\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmphb7xs7fi\customers.json. Se usar� lista vac�a.
+[ERROR] Customer inv�lido (faltan ['email']). Se ignora registro.
+[ERROR] Customer inv�lido (faltan ['name']). Se ignora registro.
+[ERROR] Customer inv�lido (campos vac�os). Se ignora registro.
+[ERROR] Customer inv�lido (campos vac�os). Se ignora registro.
+[ERROR] Customer inv�lido (campos vac�os). Se ignora registro.
+[ERROR] Customer inv�lido (faltan ['email']). Se ignora registro.
+[ERROR] Customer inv�lido (faltan ['name']). Se ignora registro.
+[ERROR] Customer inv�lido (campos vac�os). Se ignora registro.
+[ERROR] Customer inv�lido (campos vac�os). Se ignora registro.
+[ERROR] Customer inv�lido (campos vac�os). Se ignora registro.
+[ERROR] Customer inv�lido (faltan ['email']). Se ignora registro.
+[ERROR] Customer inv�lido (faltan ['name']). Se ignora registro.
+[ERROR] Customer inv�lido (campos vac�os). Se ignora registro.
+[ERROR] Customer inv�lido (campos vac�os). Se ignora registro.
+[ERROR] Customer inv�lido (campos vac�os). Se ignora registro.
+[ERROR] JSON inv�lido (no es lista) en C:\Users\joel_\AppData\Local\Temp\tmp_1i5fnet\customers.json. Se usar� [].
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpv42wo2v5\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp2sdpytk7\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpmlx97axz\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpricog3_i\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp62_vim_m\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp80lldvqb\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpypy0i_vd\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp28o58l9k\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpiphp09oy\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpeayxtbd5\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp6wpddfuu\hotels.json. Se usar� lista vac�a.
+[ERROR] Hotel inv�lido (faltan ['city', 'total_rooms', 'reserved_rooms']). Se ignora registro.
+[ERROR] Hotel inv�lido (rooms no num�ricas). Se ignora.
+[ERROR] Hotel inv�lido (total_rooms <= 0). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (campos vac�os). Se ignora.
+[ERROR] Hotel inv�lido (faltan ['city', 'total_rooms', 'reserved_rooms']). Se ignora registro.
+[ERROR] Hotel inv�lido (rooms no num�ricas). Se ignora.
+[ERROR] Hotel inv�lido (total_rooms <= 0). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (campos vac�os). Se ignora.
+[ERROR] Hotel inv�lido (faltan ['city', 'total_rooms', 'reserved_rooms']). Se ignora registro.
+[ERROR] Hotel inv�lido (rooms no num�ricas). Se ignora.
+[ERROR] Hotel inv�lido (total_rooms <= 0). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (campos vac�os). Se ignora.
+[ERROR] JSON inv�lido (no es lista) en C:\Users\joel_\AppData\Local\Temp\tmpqv39dmjk\hotels.json. Se usar� [].
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpqdh_c9tb\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpzratzg1s\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp1pm6nam6\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpf0evegde\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp30ukj006\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp3gh99ze4\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpcxbn093p\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmphlgugv49\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp1fhgxm73\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp1fhgxm73\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp1fhgxm73\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpg8g58af1\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpg8g58af1\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp6tei7lvz\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp6tei7lvz\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpyc9usy6p\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpyc9usy6p\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpyc9usy6p\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpxlyl8nx2\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpxlyl8nx2\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpxlyl8nx2\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp2p5_zkra\reservations.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp4atu5saf\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp4atu5saf\customers.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp4atu5saf\reservations.json. Se usar� lista vac�a.
+[ERROR] Reservation inv�lida (faltan ['hotel_id']). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['customer_id']). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['hotel_id']). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['customer_id']). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['hotel_id']). Se ignora.
+[ERROR] Reservation inv�lida (faltan ['customer_id']). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] Reservation inv�lida (campos vac�os). Se ignora.
+[ERROR] JSON inv�lido (no es lista) en C:\Users\joel_\AppData\Local\Temp\tmpz4wkn9aj\reservations.json. Se usar� [].
+
+==== coverage report -m ====
+Name                        Stmts   Miss  Cover   Missing
+---------------------------------------------------------
+source\__init__.py              0      0   100%
+source\customer.py             84      2    98%   100, 112
+source\exceptions.py            3      0   100%
+source\hotel.py               135      5    96%   132, 134, 159, 195, 223
+source\reservation.py          69      1    99%   105
+source\storage.py              35      0   100%
+tests\test_customer.py         72      0   100%
+tests\test_hotel.py           113      0   100%
+tests\test_reservation.py      89      0   100%
+tests\test_storage.py          70      0   100%
+---------------------------------------------------------
+TOTAL                         670      8    99%
