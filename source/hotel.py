@@ -198,3 +198,31 @@ class HotelRepository:
             raise NotFoundError(f"Hotel no encontrado: {hotel_id}")
 
         self._save_all(updated)
+
+    def cancel_room_reservation(self, hotel_id: str) -> None:
+        """Cancela una habitación reservada (decrementa reserved_rooms)."""
+        hotels = self._load_all()
+        updated: List[Hotel] = []
+        found = False
+
+        for hotel in hotels:
+            if hotel.hotel_id == hotel_id:
+                found = True
+                if hotel.reserved_rooms <= 0:
+                    raise ValidationError("No hay reservaciones para cancelar.")
+                updated.append(
+                    Hotel(
+                        hotel_id=hotel.hotel_id,
+                        name=hotel.name,
+                        city=hotel.city,
+                        total_rooms=hotel.total_rooms,
+                        reserved_rooms=hotel.reserved_rooms - 1,
+                    )
+                )
+            else:
+                updated.append(hotel)
+
+        if not found:
+            raise NotFoundError(f"Hotel no encontrado: {hotel_id}")
+
+        self._save_all(updated)
