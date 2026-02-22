@@ -91,3 +91,23 @@ class ReservationRepository:
         reservations.append(reservation)
         self._save_all(reservations)
         return reservation
+
+    def cancel_reservation(self, reservation_id: str) -> None:
+        """Cancela reservación: elimina registro y libera habitación."""
+        reservations = self._load_all()
+        target: Optional[Reservation] = None
+        remaining: List[Reservation] = []
+
+        for reservation in reservations:
+            if reservation.reservation_id == reservation_id:
+                target = reservation
+            else:
+                remaining.append(reservation)
+
+        if target is None:
+            raise NotFoundError(f"Reservation no encontrada: {reservation_id}")
+
+        # Liberar habitación en hotel (si falla, debe ser lógico/consistente)
+        self._hotel_repo.cancel_room_reservation(target.hotel_id)
+
+        self._save_all(remaining)
