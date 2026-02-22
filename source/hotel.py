@@ -108,3 +108,10 @@ class HotelRepository:
         self._save_all(hotels)
         return hotel
 
+    def get_hotel(self, hotel_id: str) -> Hotel:
+        hotels = self._load_all()
+        for hotel in hotels:
+            if hotel.hotel_id == hotel_id:
+                return hotel
+        raise NotFoundError(f"Hotel no encontrado: {hotel_id}")
+
