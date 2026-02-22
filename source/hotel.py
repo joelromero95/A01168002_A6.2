@@ -9,3 +9,22 @@ from uuid import uuid4
 
 from .exceptions import NotFoundError, ValidationError
 from .storage import load_json_list, save_json_list
+
+
+REQUIRED_FIELDS = ("hotel_id", "name", "city", "total_rooms", "reserved_rooms")
+
+
+@dataclass(frozen=True)
+class Hotel:
+    """Representa un hotel del sistema."""
+
+    hotel_id: str
+    name: str
+    city: str
+    total_rooms: int
+    reserved_rooms: int
+
+    @property
+    def available_rooms(self) -> int:
+        """Cuartos disponibles en el hotel."""
+        return max(0, self.total_rooms - self.reserved_rooms)
