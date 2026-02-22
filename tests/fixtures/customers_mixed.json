@@ -1,0 +1,10 @@
+[
+  {"customer_id": "c-001", "name": "Ana Perez", "email": "ana.perez@example.com"},
+  {"customer_id": "c-002", "name": "Luis Gomez", "email": "luis.gomez@example.com"},
+
+  {"customer_id": "bad-001", "name": "Sin Email"},
+  {"customer_id": "bad-002", "email": "no.name@example.com"},
+  {"customer_id": "   ", "name": "Id Vacio", "email": "id.vacio@example.com"},
+  {"customer_id": "bad-004", "name": "Email Vacio", "email": ""},
+  {"customer_id": "bad-005", "name": "   ", "email": "name.vacio@example.com"}
+]
