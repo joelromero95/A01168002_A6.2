@@ -1,3 +1,8 @@
+"""Unit tests for CustomerRepository (JSON persistence).
+
+Covers CRUD operations, validation rules, and resilience to invalid data in
+the persisted JSON file.
+"""
 import json
 import tempfile
 import unittest
@@ -12,13 +17,11 @@ class TestCustomerRepository(unittest.TestCase):
 
     def setUp(self) -> None:
         """Crea un entorno aislado por cada test."""
+        # pylint: disable=consider-using-with
         self.tmpdir = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmpdir.cleanup)
         self.customers_path = Path(self.tmpdir.name) / "customers.json"
         self.repo = CustomerRepository(self.customers_path)
-
-    def tearDown(self) -> None:
-        """Limpia el entorno temporal."""
-        self.tmpdir.cleanup()
 
     def _write_json(self, items) -> None:
         """Helper: escribe lista de dicts como JSON en el archivo temporal."""

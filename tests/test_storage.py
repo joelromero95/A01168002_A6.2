@@ -1,3 +1,8 @@
+"""Unit tests for storage helpers.
+
+Covers load_json_list and save_json_list behavior for missing/empty/invalid JSON,
+filtering of non-dict items, safe writes, and graceful handling of I/O errors.
+"""
 import json
 import tempfile
 import unittest

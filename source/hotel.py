@@ -109,6 +109,20 @@ class HotelRepository:
         return hotel
 
     def get_hotel(self, hotel_id: str) -> Hotel:
+        """
+        Obtiene un hotel por su identificador.
+        Carga los hoteles desde el archivo JSON y devuelve el que coincide con
+        `hotel_id`. Si no existe, lanza `NotFoundError`.
+
+        Args:
+        hotel_id: Identificador del hotel a buscar.
+
+        Returns:
+        Hotel: El hotel encontrado.
+
+        Raises:
+        NotFoundError: Si no existe un hotel con el `hotel_id` proporcionado.
+        """
         hotels = self._load_all()
         for hotel in hotels:
             if hotel.hotel_id == hotel_id:
@@ -116,6 +130,22 @@ class HotelRepository:
         raise NotFoundError(f"Hotel no encontrado: {hotel_id}")
 
     def display_hotel(self, hotel_id: str) -> str:
+        """
+        Construye una representación en texto de un hotel.
+
+        Busca el hotel por `hotel_id` y regresa un string con su información
+        principal (nombre, ciudad, cuartos reservados/total y disponibilidad).
+        Útil para imprimir en consola o registrar logs.
+
+        Args:
+            hotel_id: Identificador del hotel a mostrar.
+
+        Returns:
+            str: Texto con el detalle del hotel en formato legible.
+
+        Raises:
+            NotFoundError: Si no existe un hotel con el `hotel_id` proporcionado.
+        """
         hotel = self.get_hotel(hotel_id)
         return (
             f"Hotel[{hotel.hotel_id}] {hotel.name} ({hotel.city}) "
@@ -171,6 +201,7 @@ class HotelRepository:
         return self.get_hotel(hotel_id)
 
     def delete_hotel(self, hotel_id: str) -> None:
+        """Elimina un hotel por su identificador"""
         hotels = self._load_all()
         new_list = [h for h in hotels if h.hotel_id != hotel_id]
         if len(new_list) == len(hotels):

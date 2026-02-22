@@ -1,3 +1,8 @@
+"""Unit tests for ReservationRepository (JSON persistence).
+
+Covers reservation creation/cancellation, error handling (not found/validation),
+side effects on hotel room availability, and safe behavior with invalid JSON.
+"""
 import json
 import tempfile
 import unittest
@@ -14,6 +19,7 @@ class TestReservationRepository(unittest.TestCase):
 
     def setUp(self) -> None:
         """Crea un entorno aislado por cada test."""
+        # pylint: disable=consider-using-with
         self.tmpdir = tempfile.TemporaryDirectory()
         base = Path(self.tmpdir.name)
 

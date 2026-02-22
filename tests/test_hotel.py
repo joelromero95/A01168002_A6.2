@@ -1,3 +1,8 @@
+"""Unit tests for HotelRepository (JSON persistence).
+
+Covers CRUD operations, room reservation/cancellation rules, validation, and
+resilience to invalid data in the persisted JSON file.
+"""
 import json
 import tempfile
 import unittest
@@ -7,11 +12,13 @@ from source.exceptions import NotFoundError, ValidationError
 from source.hotel import HotelRepository
 
 
+# pylint: disable=too-many-public-methods
 class TestHotelRepository(unittest.TestCase):
     """Pruebas unitarias de HotelRepository."""
 
     def setUp(self) -> None:
         """Crea un entorno aislado por cada test."""
+        # pylint: disable=consider-using-with
         self.tmpdir = tempfile.TemporaryDirectory()
         self.hotels_path = Path(self.tmpdir.name) / "hotels.json"
         self.repo = HotelRepository(self.hotels_path)
