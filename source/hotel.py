@@ -73,3 +73,12 @@ class HotelRepository:
             reserved_rooms=reserved_rooms,
         )
 
+    def _load_all(self) -> List[Hotel]:
+        records = load_json_list(self._path)
+        hotels: List[Hotel] = []
+        for record in records:
+            hotel = self._validate_record(record)
+            if hotel is not None:
+                hotels.append(hotel)
+        return hotels
+
