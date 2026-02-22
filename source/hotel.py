@@ -164,3 +164,9 @@ class HotelRepository:
         self._save_all(updated)
         return self.get_hotel(hotel_id)
 
+    def delete_hotel(self, hotel_id: str) -> None:
+        hotels = self._load_all()
+        new_list = [h for h in hotels if h.hotel_id != hotel_id]
+        if len(new_list) == len(hotels):
+            raise NotFoundError(f"Hotel no encontrado: {hotel_id}")
+        self._save_all(new_list)
