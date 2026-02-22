@@ -1,0 +1,90 @@
+﻿python : test_cancel_room_reservation_decrements_reserved 
+(tests.test_hotel.TestHotelRepository.test_cancel_room_reservation_decrements_reserved)
+En línea: 2 Carácter: 1
++ python -m unittest tests.test_hotel -v 2>&1 |
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_cancel_roo...ments_reserved):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+cancel_room_reservation debe decrementar reserved_rooms. ... ok
+test_cancel_room_reservation_not_found_raises 
+(tests.test_hotel.TestHotelRepository.test_cancel_room_reservation_not_found_raises)
+Cancelar reservaci�n en hotel inexistente debe disparar NotFoundError. ... ok
+test_cancel_room_reservation_when_none_raises 
+(tests.test_hotel.TestHotelRepository.test_cancel_room_reservation_when_none_raises)
+Si no hay reservaciones, cancelar debe fallar. ... ok
+test_create_hotel_invalid_city_raises (tests.test_hotel.TestHotelRepository.test_create_hotel_invalid_city_raises)
+Ciudad vac�a debe disparar ValidationError. ... ok
+test_create_hotel_invalid_name_raises (tests.test_hotel.TestHotelRepository.test_create_hotel_invalid_name_raises)
+Nombre vac�o debe disparar ValidationError. ... ok
+test_create_hotel_invalid_total_rooms_raises (tests.test_hotel.TestHotelRepository.test_create_hotel_invalid_total_rooms_raises)
+total_rooms <= 0 debe disparar ValidationError. ... ok
+test_create_hotel_persists_record (tests.test_hotel.TestHotelRepository.test_create_hotel_persists_record)
+Debe crear un hotel v�lido y persistirlo en JSON. ... ok
+test_delete_hotel_not_found_raises (tests.test_hotel.TestHotelRepository.test_delete_hotel_not_found_raises)
+Eliminar un id inexistente debe disparar NotFoundError. ... ok
+test_delete_hotel_removes_record (tests.test_hotel.TestHotelRepository.test_delete_hotel_removes_record)
+delete_hotel debe eliminar el registro. ... ok
+test_display_hotel_contains_key_info (tests.test_hotel.TestHotelRepository.test_display_hotel_contains_key_info)
+display_hotel debe incluir nombre, ciudad y disponibilidad. ... ok
+test_get_hotel_not_found_raises (tests.test_hotel.TestHotelRepository.test_get_hotel_not_found_raises)
+Si no existe el id, debe disparar NotFoundError. ... ok
+test_load_all_ignores_invalid_records_from_json 
+(tests.test_hotel.TestHotelRepository.test_load_all_ignores_invalid_records_from_json)
+Debe ignorar registros inv�lidos del archivo y cargar solo los v�lidos. ... ok
+test_load_all_with_non_list_json_is_safe (tests.test_hotel.TestHotelRepository.test_load_all_with_non_list_json_is_safe)
+Si el JSON no es lista, debe manejarlo sin crash (regresa vac�o). ... ok
+test_modify_hotel_cannot_reduce_below_reserved 
+(tests.test_hotel.TestHotelRepository.test_modify_hotel_cannot_reduce_below_reserved)
+No se debe permitir total_rooms < reserved_rooms. ... ok
+test_modify_hotel_invalid_total_rooms_raises (tests.test_hotel.TestHotelRepository.test_modify_hotel_invalid_total_rooms_raises)
+Modificar con total_rooms <= 0 debe disparar ValidationError. ... ok
+test_modify_hotel_not_found_raises (tests.test_hotel.TestHotelRepository.test_modify_hotel_not_found_raises)
+Modificar un id inexistente debe disparar NotFoundError. ... ok
+test_modify_hotel_updates_record (tests.test_hotel.TestHotelRepository.test_modify_hotel_updates_record)
+Debe modificar name/city/total_rooms respetando consistencia. ... ok
+test_reserve_room_increments_reserved (tests.test_hotel.TestHotelRepository.test_reserve_room_increments_reserved)
+reserve_room debe incrementar reserved_rooms. ... ok
+test_reserve_room_no_availability_raises (tests.test_hotel.TestHotelRepository.test_reserve_room_no_availability_raises)
+Si no hay disponibilidad, reserve_room debe fallar. ... ok
+test_reserve_room_not_found_raises (tests.test_hotel.TestHotelRepository.test_reserve_room_not_found_raises)
+Reservar en hotel inexistente debe disparar NotFoundError. ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.172s
+
+OK
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpnvfbrmt9\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp2hw80q7u\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp_so81waf\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp1zecqrpc\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp99hu5wkb\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpxrxumhya\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp5y99ijgy\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpze4saufp\hotels.json. Se usar� lista vac�a.
+[ERROR] Hotel inv�lido (faltan ['city', 'total_rooms', 'reserved_rooms']). Se ignora registro.
+[ERROR] Hotel inv�lido (rooms no num�ricas). Se ignora.
+[ERROR] Hotel inv�lido (total_rooms <= 0). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (campos vac�os). Se ignora.
+[ERROR] Hotel inv�lido (faltan ['city', 'total_rooms', 'reserved_rooms']). Se ignora registro.
+[ERROR] Hotel inv�lido (rooms no num�ricas). Se ignora.
+[ERROR] Hotel inv�lido (total_rooms <= 0). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (campos vac�os). Se ignora.
+[ERROR] Hotel inv�lido (faltan ['city', 'total_rooms', 'reserved_rooms']). Se ignora registro.
+[ERROR] Hotel inv�lido (rooms no num�ricas). Se ignora.
+[ERROR] Hotel inv�lido (total_rooms <= 0). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (reserved_rooms fuera de rango). Se ignora.
+[ERROR] Hotel inv�lido (campos vac�os). Se ignora.
+[ERROR] JSON inv�lido (no es lista) en C:\Users\joel_\AppData\Local\Temp\tmpltsfph_0\hotels.json. Se usar� [].
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpox21homy\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpzu9a3503\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpwwctmwed\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp9xm6d3we\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmpbgp6gm51\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmppd_w64wm\hotels.json. Se usar� lista vac�a.
+[WARN] Archivo no existe: C:\Users\joel_\AppData\Local\Temp\tmp2j8n9r6m\hotels.json. Se usar� lista vac�a.
