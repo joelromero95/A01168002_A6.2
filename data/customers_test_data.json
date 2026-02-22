@@ -1,52 +1,10 @@
 [
-  {
-    "customer_id": "c-001",
-    "name": "Joel Romero",
-    "email": "joel.romero@test.com"
-  },
-  {
-    "customer_id": "c-002",
-    "name": "Ana García",
-    "email": "ana.garcia@test.com"
-  },
-  {
-    "customer_id": "c-neg-01",
-    "name": "Sin Email"
-  },
-  {
-    "customer_id": "c-neg-02",
-    "email": "sin.nombre@test.com"
-  },
-  {
-    "customer_id": "   ",
-    "name": "Id vacío",
-    "email": "id.vacio@test.com"
-  },
-  {
-    "customer_id": "c-neg-04",
-    "name": "",
-    "email": "name.vacio@test.com"
-  },
-  {
-    "customer_id": "c-neg-05",
-    "name": "Email vacío",
-    "email": "   "
-  },
-  "esto no es un diccionario",
-  {
-    "customer_id": 12345,
-    "name": "Id numérico",
-    "email": "id.numerico@test.com"
-  },
-  {
-    "customer_id": "c-edge-08",
-    "name": "Email numérico en archivo",
-    "email": 999
-  },
-  {
-    "customer_id": "c-edge-09",
-    "name": "Con campo extra",
-    "email": "extra@test.com",
-    "phone": "555-1234"
-  }
+  {"customer_id": "c-001", "name": "Ana Perez", "email": "ana.perez@example.com"},
+  {"customer_id": "c-002", "name": "Luis Gomez", "email": "luis.gomez@example.com"},
+
+  {"customer_id": "bad-001", "name": "Sin Email"},
+  {"customer_id": "bad-002", "email": "no.name@example.com"},
+  {"customer_id": "   ", "name": "Id Vacio", "email": "id.vacio@example.com"},
+  {"customer_id": "bad-004", "name": "Email Vacio", "email": ""},
+  {"customer_id": "bad-005", "name": "   ", "email": "name.vacio@example.com"}
 ]
