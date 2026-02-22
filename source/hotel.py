@@ -123,3 +123,44 @@ class HotelRepository:
             f"available: {hotel.available_rooms}"
         )
 
+    def modify_hotel(self, hotel_id: str, name: str, city: str, total_rooms: int) -> Hotel:
+        """Modifica info del hotel sin perder consistencia."""
+        name = name.strip()
+        city = city.strip()
+
+        if not name:
+            raise ValidationError("El nombre del hotel no puede estar vacío.")
+        if not city:
+            raise ValidationError("La ciudad no puede estar vacía.")
+        if total_rooms <= 0:
+            raise ValidationError("total_rooms debe ser mayor que 0.")
+
+        hotels = self._load_all()
+        updated: List[Hotel] = []
+        found = False
+
+        for hotel in hotels:
+            if hotel.hotel_id == hotel_id:
+                if hotel.reserved_rooms > total_rooms:
+                    raise ValidationError(
+                        "No puedes reducir total_rooms por debajo de reserved_rooms."
+                    )
+                updated.append(
+                    Hotel(
+                        hotel_id=hotel_id,
+                        name=name,
+                        city=city,
+                        total_rooms=total_rooms,
+                        reserved_rooms=hotel.reserved_rooms,
+                    )
+                )
+                found = True
+            else:
+                updated.append(hotel)
+
+        if not found:
+            raise NotFoundError(f"Hotel no encontrado: {hotel_id}")
+
+        self._save_all(updated)
+        return self.get_hotel(hotel_id)
+
