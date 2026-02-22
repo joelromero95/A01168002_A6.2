@@ -111,3 +111,14 @@ class ReservationRepository:
         self._hotel_repo.cancel_room_reservation(target.hotel_id)
 
         self._save_all(remaining)
+
+    def display_reservation(self, reservation_id: str) -> str:
+        """Muestra info de reservación."""
+        reservations = self._load_all()
+        for reservation in reservations:
+            if reservation.reservation_id == reservation_id:
+                return (
+                    f"Reservation[{reservation.reservation_id}] "
+                    f"customer={reservation.customer_id} hotel={reservation.hotel_id}"
+                )
+        raise NotFoundError(f"Reservation no encontrada: {reservation_id}")
