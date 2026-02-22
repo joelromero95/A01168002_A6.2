@@ -59,3 +59,13 @@ class ReservationRepository:
             customer_id=customer_id,
             hotel_id=hotel_id,
         )
+
+    def _load_all(self) -> List[Reservation]:
+        records = load_json_list(self._path)
+        reservations: List[Reservation] = []
+        for record in records:
+            reservation = self._validate_record(record)
+            if reservation is not None:
+                reservations.append(reservation)
+        return reservations
+
