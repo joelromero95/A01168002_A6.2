@@ -23,3 +23,17 @@ class Reservation:
     reservation_id: str
     customer_id: str
     hotel_id: str
+
+
+class ReservationRepository:
+    """Repositorio de Reservations persistido en JSON."""
+
+    def __init__(
+        self,
+        data_path: Path,
+        hotel_repo: HotelRepository,
+        customer_repo: CustomerRepository,
+    ) -> None:
+        self._path = data_path
+        self._hotel_repo = hotel_repo
+        self._customer_repo = customer_repo
