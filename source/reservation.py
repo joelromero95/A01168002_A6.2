@@ -51,7 +51,7 @@ class ReservationRepository:
         hotel_id = str(record["hotel_id"]).strip()
 
         if not reservation_id or not customer_id or not hotel_id:
-            print("[ERROR] Reservation inválida (campos vacíos). Se ignora.")  # noqa: T201
+            print("[ERROR] Reservation inválida (campos vacíos). Se ignora.")
             return None
 
         return Reservation(

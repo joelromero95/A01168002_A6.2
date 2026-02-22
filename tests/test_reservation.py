@@ -50,7 +50,10 @@ class TestReservationRepository(unittest.TestCase):
         hotel = self.hotel_repo.create_hotel("Hotel A", "CDMX", 2)
         customer = self.customer_repo.create_customer("Ana", "ana@test.com")
 
-        reservation = self.res_repo.create_reservation(customer.customer_id, hotel.hotel_id)
+        reservation = self.res_repo.create_reservation(
+            customer.customer_id,
+            hotel.hotel_id,
+        )
 
         # Verificar que existe en archivo
         saved = json.loads(self.reservations_path.read_text(encoding="utf-8"))
@@ -94,7 +97,10 @@ class TestReservationRepository(unittest.TestCase):
         hotel = self.hotel_repo.create_hotel("Hotel A", "CDMX", 1)
         customer = self.customer_repo.create_customer("Ana", "ana@test.com")
 
-        reservation = self.res_repo.create_reservation(customer.customer_id, hotel.hotel_id)
+        reservation = self.res_repo.create_reservation(
+            customer.customer_id,
+            hotel.hotel_id,
+        )
         text = self.res_repo.display_reservation(reservation.reservation_id)
 
         self.assertIn("Reservation[", text)
@@ -115,7 +121,10 @@ class TestReservationRepository(unittest.TestCase):
         hotel = self.hotel_repo.create_hotel("Hotel A", "CDMX", 2)
         customer = self.customer_repo.create_customer("Ana", "ana@test.com")
 
-        reservation = self.res_repo.create_reservation(customer.customer_id, hotel.hotel_id)
+        reservation = self.res_repo.create_reservation(
+            customer.customer_id,
+            hotel.hotel_id,
+        )
 
         # Antes: reserved_rooms = 1
         self.assertEqual(self.hotel_repo.get_hotel(hotel.hotel_id).reserved_rooms, 1)
@@ -180,13 +189,45 @@ class TestReservationRepository(unittest.TestCase):
         self._write_json(
             self.reservations_path,
             [
-                {"reservation_id": "r-001", "customer_id": "c-001", "hotel_id": "h-001"},
-                {"reservation_id": "r-002", "customer_id": "c-002", "hotel_id": "h-002"},
-                {"reservation_id": "bad-001", "customer_id": "c-001"},
-                {"reservation_id": "bad-002", "hotel_id": "h-001"},
-                {"reservation_id": "   ", "customer_id": "c-001", "hotel_id": "h-001"},
-                {"reservation_id": "bad-004", "customer_id": "   ", "hotel_id": "h-001"},
-                {"reservation_id": "bad-005", "customer_id": "c-001", "hotel_id": "   "},
+                {
+                    "reservation_id": "r-001",
+                    "customer_id": "c-001",
+                    "hotel_id": "h-001",
+                },
+
+                {
+                    "reservation_id": "r-002",
+                    "customer_id": "c-002",
+                    "hotel_id": "h-002",
+                },
+
+                {
+                    "reservation_id": "bad-001",
+                    "customer_id": "c-001",
+                },
+
+                {
+                    "reservation_id": "bad-002",
+                    "hotel_id": "h-001",
+                },
+
+                {
+                    "reservation_id": "   ",
+                    "customer_id": "c-001",
+                    "hotel_id": "h-001",
+                },
+
+                {
+                    "reservation_id": "bad-004",
+                    "customer_id": "   ",
+                    "hotel_id": "h-001",
+                },
+
+                {
+                    "reservation_id": "bad-005",
+                    "customer_id": "c-001",
+                    "hotel_id": "   ",
+                },
             ],
         )
 

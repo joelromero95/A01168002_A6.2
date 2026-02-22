@@ -106,7 +106,13 @@ class CustomerRepository:
         found = False
         for customer in customers:
             if customer.customer_id == customer_id:
-                updated.append(Customer(customer_id=customer_id, name=name, email=email))
+                updated.append(
+                    Customer(
+                        customer_id=customer_id,
+                        name=name,
+                        email=email,
+                    )
+                )
                 found = True
             else:
                 updated.append(customer)

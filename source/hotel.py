@@ -52,17 +52,17 @@ class HotelRepository:
             total_rooms = int(record["total_rooms"])
             reserved_rooms = int(record["reserved_rooms"])
         except (ValueError, TypeError):
-            print("[ERROR] Hotel inválido (rooms no numéricas). Se ignora.")  # noqa: T201
+            print("[ERROR] Hotel inválido (rooms no numéricas). Se ignora.")
             return None
 
         if not hotel_id or not name or not city:
-            print("[ERROR] Hotel inválido (campos vacíos). Se ignora.")  # noqa: T201
+            print("[ERROR] Hotel inválido (campos vacíos). Se ignora.")
             return None
         if total_rooms <= 0:
-            print("[ERROR] Hotel inválido (total_rooms <= 0). Se ignora.")  # noqa: T201
+            print("[ERROR] Hotel inválido (total_rooms <= 0). Se ignora.")
             return None
         if reserved_rooms < 0 or reserved_rooms > total_rooms:
-            print("[ERROR] Hotel inválido (reserved_rooms fuera de rango). Se ignora.")  # noqa: T201
+            print("[ERROR] Hotel inválido (reserved_rooms fuera de rango). Se ignora.")
             return None
 
         return Hotel(
@@ -123,7 +123,13 @@ class HotelRepository:
             f"available: {hotel.available_rooms}"
         )
 
-    def modify_hotel(self, hotel_id: str, name: str, city: str, total_rooms: int) -> Hotel:
+    def modify_hotel(
+            self,
+            hotel_id: str,
+            name: str,
+            city: str,
+            total_rooms: int,
+    ) -> Hotel:
         """Modifica info del hotel sin perder consistencia."""
         name = name.strip()
         city = city.strip()
