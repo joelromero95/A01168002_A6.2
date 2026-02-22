@@ -82,3 +82,29 @@ class HotelRepository:
                 hotels.append(hotel)
         return hotels
 
+    def _save_all(self, hotels: List[Hotel]) -> None:
+        save_json_list(self._path, [asdict(h) for h in hotels])
+
+    def create_hotel(self, name: str, city: str, total_rooms: int) -> Hotel:
+        """Crea un hotel y lo persiste."""
+        name = name.strip()
+        city = city.strip()
+        if not name:
+            raise ValidationError("El nombre del hotel no puede estar vacío.")
+        if not city:
+            raise ValidationError("La ciudad no puede estar vacía.")
+        if total_rooms <= 0:
+            raise ValidationError("total_rooms debe ser mayor que 0.")
+
+        hotel = Hotel(
+            hotel_id=str(uuid4()),
+            name=name,
+            city=city,
+            total_rooms=total_rooms,
+            reserved_rooms=0,
+        )
+        hotels = self._load_all()
+        hotels.append(hotel)
+        self._save_all(hotels)
+        return hotel
+
