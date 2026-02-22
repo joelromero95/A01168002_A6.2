@@ -11,3 +11,13 @@ from .exceptions import NotFoundError, ValidationError
 from .storage import load_json_list, save_json_list
 
 
+REQUIRED_FIELDS = ("customer_id", "name", "email")
+
+
+@dataclass(frozen=True)
+class Customer:
+    """Representa un cliente del sistema."""
+
+    customer_id: str
+    name: str
+    email: str
