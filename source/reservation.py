@@ -69,3 +69,25 @@ class ReservationRepository:
                 reservations.append(reservation)
         return reservations
 
+    def _save_all(self, reservations: List[Reservation]) -> None:
+        save_json_list(self._path, [asdict(r) for r in reservations])
+
+    def create_reservation(self, customer_id: str, hotel_id: str) -> Reservation:
+        """Crea una reservación: valida customer/hotel y descuenta disponibilidad."""
+        # Validar existencia (si no existe, lanza NotFoundError)
+        _ = self._customer_repo.get_customer(customer_id)
+        _ = self._hotel_repo.get_hotel(hotel_id)
+
+        # Reservar cuarto (valida disponibilidad)
+        self._hotel_repo.reserve_room(hotel_id)
+
+        reservation = Reservation(
+            reservation_id=str(uuid4()),
+            customer_id=customer_id,
+            hotel_id=hotel_id,
+        )
+
+        reservations = self._load_all()
+        reservations.append(reservation)
+        self._save_all(reservations)
+        return reservation
