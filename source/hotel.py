@@ -115,3 +115,11 @@ class HotelRepository:
                 return hotel
         raise NotFoundError(f"Hotel no encontrado: {hotel_id}")
 
+    def display_hotel(self, hotel_id: str) -> str:
+        hotel = self.get_hotel(hotel_id)
+        return (
+            f"Hotel[{hotel.hotel_id}] {hotel.name} ({hotel.city}) "
+            f"rooms: {hotel.reserved_rooms}/{hotel.total_rooms} "
+            f"available: {hotel.available_rooms}"
+        )
+
