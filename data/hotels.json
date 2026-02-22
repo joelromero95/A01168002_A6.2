@@ -1,0 +1,11 @@
+[
+  {"hotel_id": "h-001", "name": "Hotel Centro", "city": "CDMX", "total_rooms": 10, "reserved_rooms": 2},
+  {"hotel_id": "h-002", "name": "Hotel Playa", "city": "Cancún", "total_rooms": 5, "reserved_rooms": 5},
+
+  {"hotel_id": "bad-001", "name": "Faltan campos"},
+  {"hotel_id": "bad-002", "name": "No rooms", "city": "X", "total_rooms": "abc", "reserved_rooms": 0},
+  {"hotel_id": "bad-003", "name": "Total <= 0", "city": "X", "total_rooms": 0, "reserved_rooms": 0},
+  {"hotel_id": "bad-004", "name": "Reserved negativo", "city": "X", "total_rooms": 5, "reserved_rooms": -1},
+  {"hotel_id": "bad-005", "name": "Reserved > total", "city": "X", "total_rooms": 5, "reserved_rooms": 6},
+  {"hotel_id": "   ", "name": "Id vacio", "city": "X", "total_rooms": 5, "reserved_rooms": 0}
+]
